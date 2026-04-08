@@ -1,4 +1,4 @@
-//Bank Card Widget
+//Bank Card
 import 'package:flutter/material.dart';
 
 class BankCardWidget extends StatelessWidget {

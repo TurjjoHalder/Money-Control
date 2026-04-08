@@ -31,8 +31,8 @@ class BankCardWidget extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              top: -20,
-              right: -40,
+              top: -50,
+              left: 200,
               child: Container(
                 width: 200,
                 height: 200,
@@ -40,17 +40,17 @@ class BankCardWidget extends StatelessWidget {
                   borderRadius: BorderRadiusDirectional.circular(50),
                   gradient: RadialGradient(
                     colors: [
-                      const Color.fromARGB(221, 140, 68, 255),
+                      const Color.fromARGB(221, 56, 123, 248),
 
-                      const Color.fromARGB(2, 137, 82, 224),
-                      const Color.fromARGB(1, 137, 82, 224),
+                      const Color.fromARGB(2, 56, 123, 248),
+                      const Color.fromARGB(1, 56, 123, 248),
                     ],
                   ),
                 ),
               ),
             ),
             Positioned(
-              bottom: -35,
+              bottom: -50,
               left: -40,
               child: Container(
                 width: 200,
@@ -79,7 +79,7 @@ class BankCardWidget extends StatelessWidget {
               padding: const EdgeInsets.all(24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   // Top row: chip + bank name
                   Row(
@@ -102,10 +102,12 @@ class BankCardWidget extends StatelessWidget {
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2,
+                          fontStyle: FontStyle.italic,
                         ),
                       ),
                     ],
                   ),
+                  const SizedBox(height: 18),
 
                   // Card number
                   Text(
@@ -119,6 +121,7 @@ class BankCardWidget extends StatelessWidget {
                   ),
 
                   // Bottom row: card holder + expiry
+                  const SizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -145,7 +148,7 @@ class BankCardWidget extends StatelessWidget {
                         ],
                       ),
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
                             'EXPIRES',

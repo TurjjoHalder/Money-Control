@@ -37,7 +37,7 @@ class _CardsState extends State<Cards> {
               BankCardWidget(
                 cardNumber: '4567',
                 cardHolder: 'Turjjo Halder',
-                expiryDate: '12/25',
+                expiryDate: '12/28',
                 bankName: 'BANK',
               ),
               const SizedBox(height: 24),
@@ -65,32 +65,26 @@ class _CardsState extends State<Cards> {
               ),
               const SizedBox(height: 16),
               Container(
-                width: double.infinity,
-                height: 80,
-
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black12,
-                      blurRadius: 8,
-                      offset: Offset(0, 4),
+                      blurRadius: 2,
                     ),
                   ],
                 ),
-                child: Row(
-                  children: [
-                    const SizedBox(width: 20),
-                    Container(
-                      width: 42,
-                      height: 42,
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 219, 234, 254),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: Text(
+                child: ListTile(
+                  title: Text('Shared Savings',style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFF1A1A2E),
+                          ),),
+                  subtitle: Text('\$10,500',),
+                  leading: CircleAvatar(
+                    backgroundColor: Color.fromARGB(255, 219, 234, 254),
+                    child: Text(
                           "S",
                           style: TextStyle(
                             color: Color.fromARGB(255, 38, 99, 235),
@@ -98,32 +92,8 @@ class _CardsState extends State<Cards> {
                             fontSize: 18,
                           ),
                         ),
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Shared Savings",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF1A1A2E),
-                          ),
-                        ),
-                        Text(
-                          "Balance: \$2,500",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black54,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                  ),
+                  trailing: Icon( Icons.arrow_forward, size: 25, color: Colors.grey),
                 ),
               ),
             ],

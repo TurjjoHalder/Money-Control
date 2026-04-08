@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class TransactionItem extends StatefulWidget {
   final IconData icon;
   final Color iconColor;
@@ -8,7 +7,7 @@ class TransactionItem extends StatefulWidget {
   final String title;
   final String subtitle;
   final num amount;
-  // final Color amountColor;
+
   const TransactionItem({
     super.key,
     required this.icon,
@@ -17,7 +16,6 @@ class TransactionItem extends StatefulWidget {
     required this.title,
     required this.subtitle,
     required this.amount,
-    // required this.amountColor,
   });
 
   @override
@@ -25,7 +23,6 @@ class TransactionItem extends StatefulWidget {
 }
 
 class _TransactionItemState extends State<TransactionItem> {
-
   Color get amountColor {
     if (widget.amount < 0) {
       return Colors.red;
@@ -35,16 +32,16 @@ class _TransactionItemState extends State<TransactionItem> {
       return Colors.black;
     }
   }
+
   String get formattedAmount {
-    if (amountColor == Colors.red){
+    if (amountColor == Colors.red) {
       return "-\$${widget.amount.abs().toStringAsFixed(2)}";
-    } else if (amountColor == Colors.green){
+    } else if (amountColor == Colors.green) {
       return "+\$${widget.amount.toStringAsFixed(2)}";
     } else {
       return "\$${widget.amount.toStringAsFixed(2)}";
     }
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +53,7 @@ class _TransactionItemState extends State<TransactionItem> {
         borderRadius: BorderRadius.circular(14),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha:0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
